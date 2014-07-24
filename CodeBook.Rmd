@@ -1,0 +1,38 @@
+---
+title: "CodeBook"
+author: "Peter Kurpinski"
+date: "Thursday, July 24, 2014"
+output:
+  html_document:
+    keep_md: yes
+---
+# Code Book
+
+This file describes the variables, the data, and any transformations that I performed to clean up the data.
+
+### The source of the data
+
+It is about wearable computing. The data represents data collected from the accelerometers from the Samsung Galaxy S smartphone. 
+
+The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities:
+
+1. WALKING 
+2. WALKING_UPSTAIRS 
+3. WALKING_DOWNSTAIRS 
+4. SITTING 
+5. STANDING 
+6. LAYING 
+
+wearing a smartphone on the waist. The embedded sensors, an accelerometer and gyroscope, provided acceleration and angular velocity 3D vectors at a constant rate of 50Hz. 
+The type of activity performed in time has been labeled manually.
+
+The rough sensor signals were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). 
+
+The acceleration signal, which has gravitational and body motion components, was separated into body acceleration and gravity. From each window, a vector of features was obtained by calculating variables from the time and frequency domain. 
+
+### Cleaning the data:
+
+Work performed to clean up the data 1. First step was to recognize what was present in the rough data files 2. and how it was structured. 3. In order to achieve it I read and makes notes on a) Data Science, Wearable Computing and the Battle for the Throne as World’s Top Sports Brand (which was a waste of time from the tas point of wiev) b)Human Activity Recognition Using Smartphones Data Set on both ucsi site aqnd univ site. Still 561 features vector not described c) previewing files structure and descriptions. There are 3 types of files in the data set a) signal: with 128 columns b) train/test: with 561 columns c) description: features.txt with train/test columns names, 4. Then I made a new pot of tea and started thinking about a structure of tidy data set 5.
+
+### Columns
+
