@@ -36,13 +36,29 @@ if(!"data.table" %in% installed.packages()) install.packages("data.table")
 
 
 
+
+
+
+
+
+
+
 #1. downloading and unzipping data set
-if(!file.exists("./UCI HAR Dataset/README.txt")){
-  #if(!file.exists("./data")){dir.create("./data")}
+# if(!file.exists("./data/README.txt")){
+# download.file("https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip", fileTemp)
+# dt <- read.table(unz(fileTemp, "a1.dat"))
+# unlink(temp)
+# 
+if(!file.exists("./data/UCI HAR Dataset/README.txt")){
   fileUrl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
-  download.file(fileUrl, destfile="./getdata-projectfiles-UCI HAR Dataset.zip", method="auto")
-  unzip("getdata-projectfiles-UCI HAR Dataset.zip",exdir=".")
+  download.file(fileUrl, destfile="./data/Dataset.zip", method="auto")
+  unzip("./data/Dataset.zip",exdir="./data")
 }
+
+
+
+
+
 
 #1A. loading features labels 
 tmp <- read.table("./UCI HAR Dataset/features.txt",
