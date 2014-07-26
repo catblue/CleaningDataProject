@@ -22,11 +22,19 @@ Following is the log of actions that I undertook in order to create aimed tidy d
 1. script for downloading and unziping data into project subdirectory ./data
 2. because of nothing simmilar available in RStudio I put the data into Excel spredsheet with 10 
 tabs (train subset only, ignoring y and z axis but still it took 56 MB!!) in order to see how data is arranged.
-3. after reading descriptions and doing some educated guessing :), I found out that, for example in the file "total_acc_x_train.txt":
-  - each row represents 2.56 sek of recordings of acceleration of one of the subjects (pointed at by row in "subjetct_train.txt" file) along axis X.
-  - type of activity performed during this 2.56sek is to be found in "y_train.txt" file
-  - that that particular 2.56 has been used to calculate 561 various parameters (how they we computed was rougly mentioned in "features_info.txt"), names of which are to be found in file "features.txt"
-4. At this moment I realized that I will not be interested in accelerations, nor in velocities, because the mediums are already calculated. So I will have to do following steps:
+3. after reading descriptions and doing some educated guesses :), I found out that, on example of the file "total_acc_x_train.txt":
+  - each row represents 2.56 sek of recordings of acceleration of one of the subjects (pointed at by the subject identifier in coressponding row of "subject_train.txt" file).
+  - type of activity performed during that 2.56sek period is to be found in "y_train.txt" file in similar way as subject id.
+  - that this particular 2.56 measurement has been used to calculate 561 various parameters (how they we computed was rougly mentioned in "features_info.txt"), grouped in "X_train.txt". The names of computed parameters are to be found in the file "features.txt"
+4. At that moment I realized that I will not be interested in accelerations, nor in velocities, because their mediums and sd are already calculated, So I will will need only:
+  * "X_train.txt"
+  * "y_train.txt"
+  * "subject_train.txt"
+  * and respectively "test" files
+  * "fautures.txt" file
+5. I started with loading "features" and manualy have changed some column names making them "tidy". Also I created a logical vector indexing columns that I decided to extract from original measurements. Decision I took noticing that mean and sd  parameters actually describing movemement of subjects together: 3D vectors of velocity, acceleration and jerk. I added the very interesting info about angles (columns 555-561) because it contained information on vertical position of the body of a subject. However angles between averaged vectors are not required mediums or standard deviations...
+
+  have to do following steps:
 
 * load "body_acc_x-z_train.txt" and "body_gyro_x-z_train+test.txt" files
 

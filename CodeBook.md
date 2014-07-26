@@ -1,6 +1,6 @@
 # CodeBook
 Peter Kurpinski  
-Thursday, July 24, 2014  
+Thursday, July 24, 2014   
 # Code Book
 
 This file describes the variables, the data, and any transformations that I performed to clean up the data.
